@@ -1,4 +1,4 @@
-package org.animal;
+package org.models.animal;
 
 public class Animal {
     private String genus;
@@ -7,7 +7,9 @@ public class Animal {
     }
     public Animal(){
     }
-
+    public void speak(){
+        System.out.println("ku");
+    }
     @Override
     public String toString() {
         return this.genus;
