@@ -1,4 +1,4 @@
-public class Person extends Animal implements Swimmable, Speaking{
+public abstract class Person extends Animal implements Swimmable, Speaking{
     private String name;
     private int age;
     public Person(String name, int age){
@@ -8,18 +8,17 @@ public class Person extends Animal implements Swimmable, Speaking{
     public Person(String name) {
         this();
         this.name = name;
+        this.age = 0;
     }
     public Person(){
         super("Человек");
+        this.name = "Неизвестный";
+        this.age = 0;
     }
-    @Override
-    public void speak() {
-        System.out.println("Hello my frend!");
-    }
+    public abstract void speak();
 
-    @Override
-    public void swim() {
-        System.out.println("Я еще не умею плавать, но могу научится");
+    public void swim(){
+        System.out.println("Я могу научится плавать");
     }
 
     @Override
