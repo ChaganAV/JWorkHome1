@@ -5,7 +5,5 @@ public abstract class Animal {
     }
     public Animal(){
     }
-    public void say(){
-        System.out.println("ku");
-    }
+    public abstract void say();
 }
