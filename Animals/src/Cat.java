@@ -1,4 +1,4 @@
-public class Cat extends Animal {
+public class Cat extends Animal implements Speaking {
     private String name;
     public Cat(){
         super("Кошка");
@@ -8,7 +8,7 @@ public class Cat extends Animal {
         this.name = name;
     }
     @Override
-    public void say() {
+    public void speak() {
         System.out.println("mau-mau-mau");
     }
 

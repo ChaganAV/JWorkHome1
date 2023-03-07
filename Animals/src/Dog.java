@@ -1,4 +1,4 @@
-public class Dog extends Animal{
+public class Dog extends Animal implements Speaking, Swimmable{
     private String name;
     public Dog(){
         super("Собака");
@@ -8,9 +8,15 @@ public class Dog extends Animal{
         this();
         this.name = name;
     }
+
     @Override
-    public void say() {
+    public void speak() {
         System.out.println("гав-гав");
+    }
+
+    @Override
+    public void swim() {
+        System.out.println("Я плыву-плыву...буль-буль");
     }
 
     @Override
