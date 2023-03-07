@@ -21,6 +21,6 @@ public class Dog extends Animal implements Speaking, Swimmable{
 
     @Override
     public String toString() {
-        return String.format("I am %s, my name is %s",super.toString(),name);
+        return String.format("Я %s, по кличке %s",super.toString(),name);
     }
 }

@@ -23,6 +23,6 @@ public abstract class Person extends Animal implements Swimmable, Speaking{
 
     @Override
     public String toString() {
-        return String.format("I am %s, my name is %s",super.toString(),name);
+        return String.format("Я %s, меня зовут %s",super.toString(),name);
     }
 }

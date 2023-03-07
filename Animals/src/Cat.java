@@ -14,6 +14,6 @@ public class Cat extends Animal implements Speaking {
 
     @Override
     public String toString() {
-        return String.format("I am %s, my name is %s", super.toString(),name);
+        return String.format("Мур-р %s, я мур-мур %s", super.toString(),name);
     }
 }

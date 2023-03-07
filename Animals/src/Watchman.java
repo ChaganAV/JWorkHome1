@@ -1,6 +1,8 @@
 public class Watchman extends Person implements Publish{
-    public Watchman(String name, int age) {
+    private Gender gender;
+    public Watchman(String name, int age, Gender gen) {
         super(name, age);
+        this.gender = gen;
     }
 
     @Override
