@@ -6,15 +6,16 @@ public class Main {
         try {
             FileRepository repo = new FileRepository("Adams.txt");
             repo.fillRepository();
-            List<Persona> personas = repo.getPersonas();
+            List<Person> persons = repo.getPersons();
             GeoAdams adams = new GeoAdams();
-            Persona temp = null;
-            for(Persona p: personas){
-                if(temp == null)
-                    temp = p;
+            Person parent = null;
+            List<Person> children = new ArrayList<>();
+            for(Person p: persons){
+                if(parent == null)
+                    parent = p;
                 else {
-                    Node node = new Node(temp,Relation.parent,p);
-                    temp = p;
+                    Node node = new Node(parent, Relation.parent, p);
+                    parent = p;
                     adams.add(node);
                 }
             }

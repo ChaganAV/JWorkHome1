@@ -15,4 +15,6 @@ public abstract class Human {
         this.name = name;
     }
     public abstract String toString();
+
+    public abstract boolean equals(Person pers);
 }
