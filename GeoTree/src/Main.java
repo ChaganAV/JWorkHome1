@@ -55,8 +55,7 @@ public class Main {
             for(Node n: nodes.getNodes(Relation.parent).stream().filter(n -> n.p1.getAge()>age).toList()){
                 System.out.println(n);
             }
-            //Persona persona = new Persona("Test",33,Gender.man,1948);
-            //System.out.println(persona);
+
             System.out.println("-".repeat(15));
             FileRepository repo = new FileRepository("Adams.txt");
             repo.fillRepository();
@@ -72,13 +71,13 @@ public class Main {
                     adams.add(node);
                 }
             }
-            for(Node n: adams.getNodes()){
-                System.out.println(n);
+            int ageFilter = 920;
+            for(Node n: adams.getNodes(Relation.parent).stream().filter(n->n.p1.getAge()>ageFilter).toList()){
+                System.out.println(n.p1);
             }
 
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
-        //System.out.println("p");
     }
 }

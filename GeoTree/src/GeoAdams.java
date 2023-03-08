@@ -8,6 +8,9 @@ public class GeoAdams extends Tree implements IListNodes{
     public List<Node> getNodes() {
         return this.nodes;
     }
+    public List<Node> getNodes(Relation rel){
+        return this.getNodes().stream().filter(n -> n.relation.equals(rel)).toList();
+    }
 
     @Override
     public void add(Node node) {

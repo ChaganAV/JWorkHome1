@@ -24,8 +24,23 @@ public class Person extends Human{
     public int getAge(){
         return this.age;
     }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+
     @Override
     public String toString() {
-        return String.format("%s %s возраст %d",super.getName(),gender,age);
+        String gend = "мужчина";
+        if(this.gender == Gender.woman) gend = "женщина";
+        return String.format("%s %s возраст %d",super.getName(),gend,age);
     }
 }

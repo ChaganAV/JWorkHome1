@@ -16,6 +16,8 @@ public class Node {
     }
     @Override
     public String toString() {
-        return String.format("%s: %s %s",p1,relation,p2);
+        String rel = "родитель";
+        if (relation == Relation.child) rel="ребенок";
+        return String.format("%s (%s) -> %s",p1,rel,p2);
     }
 }
