@@ -3,7 +3,6 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-
         try {
             Person marry = new Person("Marry", 31,"w");
             Person jon = new Person("Jon", 33, "m");
