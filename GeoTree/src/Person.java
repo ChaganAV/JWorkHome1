@@ -3,7 +3,6 @@ import java.util.List;
 public class Person extends Human{
     private int age;
     private Gender gender;
-//    List<Person> persons = new ArrayList<>();
     public Person(){
         super();
         age = 0;

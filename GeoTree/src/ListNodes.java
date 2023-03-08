@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListNodes {
+public class ListNodes implements IListNodes{
     private List<Node> nodes = new ArrayList<>();
     public void add(Node node){
         nodes.add(node);
