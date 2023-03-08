@@ -17,8 +17,8 @@ public class FileRepository {
         while (true){
             String[] line = scanner.nextLine().split(";");
             if(line[0].equals("stop"))break;
-            int age = Integer.parseInt(line[2]);
-            int year = Integer.parseInt(line[1]);
+            int age = Integer.parseInt(line[1]);
+            int year = Integer.parseInt(line[2]);
             repo.add(new Persona(line[0],age,Gender.man,year));
         }
     }

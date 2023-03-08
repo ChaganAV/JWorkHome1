@@ -8,6 +8,6 @@ public class Persona extends Person{
 
     @Override
     public String toString() {
-        return super.toString()+String.format(", год рождения "+this.birthday);
+        return super.toString()+String.format(", год рождения "+this.birthday + " до н.э.");
     }
 }
