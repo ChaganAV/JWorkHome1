@@ -4,14 +4,14 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         try {
-            Person marry = new Person("Marry", 31,"w");
-            Person jon = new Person("Jon", 33, "m");
-            Person larry = new Person("Larry", 5, "m");
-            Person tovald = new Person("Tovald", 65, "m");
-            Person lisa = new Person("Lisa", 64, "w");
-            Person catty = new Person("Catty", 89, "w");
-            Person mark = new Person("Mark", 74, "m");
-            Person felix = new Person("Felix", 14, "m");
+            Person marry = new Person("Marry", 31,Gender.woman);
+            Person jon = new Person("Jon", 33, Gender.man);
+            Person larry = new Person("Larry", 5, Gender.man);
+            Person tovald = new Person("Tovald", 65, Gender.man);
+            Person lisa = new Person("Lisa", 64, Gender.woman);
+            Person catty = new Person("Catty", 89, Gender.woman);
+            Person mark = new Person("Mark", 74, Gender.man);
+            Person felix = new Person("Felix", 14, Gender.man);
             List<Person> persons = new ArrayList<>();
             persons.add(marry);
             persons.add(jon);
@@ -53,6 +53,26 @@ public class Main {
             System.out.println("--- Отберем по возрасту ---");
             int age = 60;
             for(Node n: nodes.getNodes(Relation.parent).stream().filter(n -> n.p1.getAge()>age).toList()){
+                System.out.println(n);
+            }
+            //Persona persona = new Persona("Test",33,Gender.man,1948);
+            //System.out.println(persona);
+            System.out.println("-".repeat(15));
+            FileRepository repo = new FileRepository("Adams.txt");
+            repo.fillRepository();
+            List<Persona> personas = repo.getPersonas();
+            GeoAdams adams = new GeoAdams();
+            Persona temp = null;
+            for(Persona p: personas){
+                if(temp == null)
+                    temp = p;
+                else {
+                    Node node = new Node(temp,Relation.parent,p);
+                    temp = p;
+                    adams.add(node);
+                }
+            }
+            for(Node n: adams.getNodes()){
                 System.out.println(n);
             }
 

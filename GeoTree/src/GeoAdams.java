@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class GeoNodes extends Tree implements IListRepository{
+public class GeoAdams extends Tree implements IListNodes{
     private List<Node> nodes = new ArrayList<>();
 
     @Override
-    public List<Node> getRepository() {
+    public List<Node> getNodes() {
         return this.nodes;
     }
 
