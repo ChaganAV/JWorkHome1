@@ -9,7 +9,7 @@ public class GeoAdams extends Tree implements IListNodes{
         return this.nodes;
     }
     public List<Node> getNodes(Relation rel){
-        return this.getNodes().stream().filter(n -> n.relation.equals(rel)).toList();
+        return this.getNodes().stream().filter(n -> n.getRelation().equals(rel)).toList();
     }
 
     @Override

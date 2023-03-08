@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class FileRepository{
+public class FileRepository implements IListPerson{
     private String fileName;
     List<Person> repo = new ArrayList<>();
     public FileRepository(String fileName) {

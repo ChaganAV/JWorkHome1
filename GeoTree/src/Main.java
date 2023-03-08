@@ -23,10 +23,18 @@ public class Main {
                 System.out.println(n);
             }
             System.out.println("--- С учетом возраста ---");
-            int ageFilter = 900;
-            for(Node n: adams.getNodes(Relation.parent).stream().filter(n->n.p1.getAge()>ageFilter).toList()){
+            int ageFilter = 500;
+            for(Node n: adams.getNodes(Relation.parent).stream().filter(n->n.getParent().getAge()>ageFilter).toList()){
                 System.out.println(n);
             }
+            System.out.println("--- Самый долгожитель ---");
+            Person maxAge = new Person();
+            for(Person p: persons){
+                if(p.getAge()>maxAge.getAge()){
+                    maxAge = p;
+                }
+            }
+            System.out.println(maxAge);
 
         }catch (Exception e){
             System.out.println(e.getMessage());

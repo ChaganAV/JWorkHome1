@@ -8,7 +8,7 @@ public class ListNodes implements IListNodes{
     }
     public List<Node> getNodes(){return nodes;}
     public List<Node> getNodes(Relation rel){
-        List<Node> nodesFilter = getNodes().stream().filter(n -> n.relation.equals(rel)).toList();
+        List<Node> nodesFilter = getNodes().stream().filter(n -> n.getRelation().equals(rel)).toList();
         return nodesFilter;
     }
 }
