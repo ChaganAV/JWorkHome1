@@ -1,10 +1,19 @@
-public class Door extends Box{
+public class Door {
+    private Boolean state;
     public Door(Boolean lock){
-        super(lock);
+        this.state =lock;
+    }
+
+    public Boolean getState() {
+        return state;
+    }
+
+    public void setState(Boolean state) {
+        this.state = state;
     }
 
     @Override
     public String toString() {
-        return String.format(getLock().toString());
+        return String.format(getState().toString());
     }
 }

@@ -1,24 +1,34 @@
 public class Wardrobe extends Dresser implements IClosed{
-    public Wardrobe(Door[] door, Box[] box) {
-        super(door, box);
+    private String color;
+
+    public Wardrobe(Boolean lock, String color) {
+        super(lock);
+        this.color = color;
+    }
+    public Wardrobe(){
+        super(false);
+        this.color = "Серый";
+    }
+    public String getColor() {
+        return color;
     }
 
-    public Wardrobe(Door[] door) {
-        super(door);
+    public void setColor(String color) {
+        this.color = color;
     }
-
-    public Wardrobe(Box[] box) {
-        super(box);
-    }
-
     @Override
     public void setLocked(Boolean lock) {
-        setLock(lock);
+        super.setState(lock);
     }
 
     @Override
     public Boolean getLocked() {
-        return null;
+        return super.getState();
+    }
+
+    @Override
+    public String toString() {
+        return super.toString()+String.format(" цвет %s",this.color);
     }
 }
 

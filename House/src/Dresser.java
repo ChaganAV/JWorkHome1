@@ -1,36 +1,20 @@
-public abstract class Dresser extends Box{
-    private Door[] door;
-    private Box[] box;
+public abstract class Dresser{
+    private Door door;
 
-    public Dresser(Door[] door, Box[] box) {
-        super(false);
-        this.door = door;
-        this.box = box;
+    public Dresser(Boolean lock) {
+        this.door = new Door(lock);
     }
 
-    public Dresser(Door[] door) {
-        super(false);
-        this.door = door;
-        this.box = null;
-    }
-    public Dresser(Box[] box) {
-        super(false);
-        this.door = null;
-        this.box = box;
-    }
-    public Door[] getDoor() {
-        return door;
+    public Boolean getState() {
+        return door.getState();
     }
 
-    public void setDoor(Door[] door) {
-        this.door = door;
+    public void setState(Boolean lock) {
+        this.door.setState(lock);
     }
 
-    public Box[] getBox() {
-        return box;
-    }
-
-    public void setBox(Box[] box) {
-        this.box = box;
+    @Override
+    public String toString() {
+        return String.format("Шкаф");
     }
 }
