@@ -27,6 +27,11 @@ public class Main {
             for(Node n: adams.getNodes(Relation.parent).stream().filter(n->n.getParent().getAge()>ageFilter).toList()){
                 System.out.println(n);
             }
+            System.out.println("--- Отсортируем по возрасту ---");
+            for(Person p: persons.stream().sorted((p1,p2)->Integer.compare(p1.getAge(),p2.getAge())).toList()){
+                System.out.println(p);
+            }
+
             System.out.println("--- Самый долгожитель ---");
             Person maxAge = new Person();
             for(Person p: persons){
