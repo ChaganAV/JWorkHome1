@@ -20,12 +20,13 @@ public class HronologyRepository implements IRepository{
     }
 
     @Override
-    public void setRepository(String filename) {
-        File file = Path.of("ImportantHistoryMarkers.txt").toFile();
+    public void fillRepository() {
+        String dir = System.getProperty("user.dir");
+        File file = Path.of(dir,filename).toFile();
         if(file.exists()){
             try (Scanner scanner = new Scanner(file)) {
                 while (true){
-                    String[] line = scanner.nextLine().split("|");
+                    String[] line = scanner.nextLine().split(";");
                     if(line[0].equals("stop"))break;
                     Hronology hronic = new Hronology();
                     hronic.setYear(Integer.parseInt(line[0]));
@@ -33,10 +34,13 @@ public class HronologyRepository implements IRepository{
                     hronic.setRel(line[2]);
                     hronic.setDescription(line[3]);
                     repository.add(hronic);
+                    //System.out.println("добавили");
                 }
             } catch (FileNotFoundException e) {
+                System.out.println(e.getMessage());
                 throw new RuntimeException(e);
             }
         }
     }
+
 }

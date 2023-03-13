@@ -65,4 +65,9 @@ public class Hronology {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%d год до н.э., количество лет %d (%s) %s",getYear(),getPeriod(),getRel(),getDescription());
+    }
 }

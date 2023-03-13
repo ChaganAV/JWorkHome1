@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 public class Main {
@@ -27,11 +29,6 @@ public class Main {
             for(Node n: adams.getNodes(Relation.parent).stream().filter(n->n.getParent().getAge()>ageFilter).toList()){
                 System.out.println(n);
             }
-            System.out.println("--- Отсортируем по возрасту ---");
-            for(Person p: persons.stream().sorted((p1,p2)->Integer.compare(p1.getAge(),p2.getAge())).toList()){
-                System.out.println(p);
-            }
-
             System.out.println("--- Самый долгожитель ---");
             Person maxAge = new Person();
             for(Person p: persons){
@@ -40,6 +37,27 @@ public class Main {
                 }
             }
             System.out.println(maxAge);
+            System.out.println("--- Отсортируем по возрасту ---");
+//            for(Person p: persons.stream().sorted((p1,p2)->Integer.compare(p1.getAge(),p2.getAge())).toList()){
+//                System.out.println(p);
+//            }
+            Collections.sort(persons,new PersonAgeComparator());
+            for(Person p: persons)
+                System.out.println(p);
+            System.out.println("--- Отсортируем по возрасту по убыванию ---");
+            Collections.reverse(persons);
+            for(Person p: persons)
+                System.out.println(p);
+
+
+            System.out.println("--- Как определяется дата сотворения Адама ---");
+            HronologyRepository hronicaRepo = new HronologyRepository("Hronology.txt");
+            hronicaRepo.fillRepository();
+            List<Hronology> hronica = hronicaRepo.getRepository();
+            Iterator<Hronology> iterator = hronica.iterator();
+            while (iterator.hasNext()){
+                System.out.println(iterator.next());
+            }
 
         }catch (Exception e){
             System.out.println(e.getMessage());
