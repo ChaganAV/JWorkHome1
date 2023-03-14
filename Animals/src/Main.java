@@ -43,14 +43,21 @@ public class Main {
         Iterator<Animal> iteratorReverse = zoo.iterator();
         Skunk skunk = new Skunk(1);
         while (iteratorReverse.hasNext()){
-            Animal next = iteratorReverse.next();
-            if(next instanceof Skunk) {
-                skunk = (Skunk) next;
+            Animal nextRev = iteratorReverse.next();
+            if(nextRev instanceof Skunk) {
+                skunk = (Skunk) nextRev;
+                System.out.println("---");
+                noy.speak("Скунс?");
+                System.out.println(skunk);
                 noy.speak("Скунс, ты иди на воздухе постой, последним пойдешь...");
                 iteratorReverse.remove();
+                System.out.println("---");
+                noy.speak("Следующий...");
+            }else {
+                System.out.println(nextRev);
             }
-            System.out.println(next);
         }
+        System.out.println("---");
         noy.speak("А теперь Скунс... я сказал горбатый, тьфу ты, Скунс");
         System.out.println(skunk.toString());
     }
