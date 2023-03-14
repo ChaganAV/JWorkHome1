@@ -1,12 +1,10 @@
 public class Main {
     public static void main(String[] args) {
-        Wardrobe drobe = new Wardrobe();
-        drobe.setState(true);
-        if (drobe.getState())
-            System.out.println(drobe.toString()+" открыт");
-        else
-            System.out.println(drobe.toString()+" закрыт");
+        Ark kovcheg = new Ark(true,"Коричневый");
+        if (kovcheg.getState())
+            System.out.println(kovcheg.toString()+" открыт");
+        Person God = new Person();
 
-        System.out.println(drobe.toString());
+        System.out.println(kovcheg.toString());
     }
 }
