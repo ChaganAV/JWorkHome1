@@ -3,4 +3,8 @@ public class Ark extends Wardrobe{
         super(lock, color);
     }
 
+    @Override
+    public String toString() {
+        return String.format("Ковчег");
+    }
 }

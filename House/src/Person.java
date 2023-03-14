@@ -33,7 +33,9 @@ public class Person {
     public void setAge(int age) {
         this.age = age;
     }
-
+    public void closeDoor(Ark ark){
+        ark.setLocked(false);
+    }
     @Override
     public String toString() {
         return String.format("Я %s, меня зовут %s",super.toString(),name);
