@@ -1,4 +1,4 @@
-public abstract class Person extends Animal implements Swimmable, Speaking{
+public abstract class Person extends Animal implements ISwimmable, Speaking{
     private String name;
     private int age;
     public Person(String name, int age){

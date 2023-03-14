@@ -1,4 +1,4 @@
-public class Director extends Person implements Publish{
+public class Director extends Person implements IPublish{
     private Gender gender;
     public Director(String name, int age, Gender gen) {
         super(name, age);

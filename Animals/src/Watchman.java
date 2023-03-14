@@ -1,4 +1,4 @@
-public class Watchman extends Person implements Publish{
+public class Watchman extends Person implements IPublish{
     private Gender gender;
     public Watchman(String name, int age, Gender gen) {
         super(name, age);

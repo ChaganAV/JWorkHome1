@@ -1,4 +1,4 @@
-public class Dog extends Animal implements Speaking, Swimmable{
+public class Dog extends Animal implements Speaking, ISwimmable{
     private String name;
     public Dog(){
         super("Собака");

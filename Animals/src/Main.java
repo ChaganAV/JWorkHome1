@@ -6,7 +6,7 @@ public class Main {
         List<Animal> zoo = new ArrayList<>();
         Dog barsik = new Dog("Барсик");
         Dog rekc = new Dog("рekc");
-        Cat murka = new Cat("Мурка");
+        Cat murka = new Cat();
         zoo.add(barsik);
         zoo.add(rekc);
         zoo.add(murka);
@@ -17,8 +17,8 @@ public class Main {
             if(z instanceof Speaking){
                 ((Speaking) z).speak();
             }
-            if(z instanceof Publish){
-                ((Publish) z).post();
+            if(z instanceof IPublish){
+                ((IPublish) z).post();
             }
         }
         List<Person> shtat = new ArrayList<>();
