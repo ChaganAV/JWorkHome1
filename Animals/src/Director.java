@@ -7,12 +7,17 @@ public class Director extends Person implements IPublish{
 
     @Override
     public void post() {
-        System.out.println("Я директор этого зоопарка");
+        System.out.println("Я директор этого зоопарка, пора собрать зверушек в Ковчег");
+    }
+
+    @Override
+    public void speak(String text) {
+
+        System.out.println(text);
     }
 
     @Override
     public void speak() {
-        System.out.println("Я говорю как начальник!");
+        System.out.println(String.format("Я дед Ной мне уже %d лет",this.getAge()));
     }
-
 }

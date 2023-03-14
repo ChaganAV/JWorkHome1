@@ -1,6 +1,6 @@
 public class Hippo extends Animal implements IHorbivore, IRaptor{
-    public Hippo(String genus, int weight) {
-        super(genus, weight);
+    public Hippo(int weight) {
+        super("Бегемот", weight);
     }
 
     @Override

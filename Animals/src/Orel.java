@@ -1,6 +1,6 @@
-public class Orel extends Bird{
-    public Orel(String genus, int weight) {
-        super(genus, weight);
+public class Orel extends Bird implements IFly{
+    public Orel(int weight) {
+        super("Орел", weight);
     }
 
     @Override

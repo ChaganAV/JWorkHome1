@@ -6,7 +6,9 @@ public abstract class Animal {
         this.genus = genus;
         this.weight = weight;
     }
-
+    public Animal(int weight) {
+        this.weight = weight;
+    }
     public Animal(String genus){
         this();
         this.genus = genus;

@@ -1,12 +1,10 @@
-public class Dog extends Animal implements Speaking, ISwimmable{
-    private String name;
+public class Dog extends Animal implements ISpeaking, ISwimmable{
     public Dog(){
         super("Собака");
-        this.name = "Дворняжка";
     }
-    public Dog(String name){
-        this();
-        this.name = name;
+
+    public Dog(int weight) {
+        super("Собака",weight);
     }
 
     @Override
@@ -21,6 +19,11 @@ public class Dog extends Animal implements Speaking, ISwimmable{
 
     @Override
     public String toString() {
-        return String.format("Я %s, по кличке %s",super.toString(),name);
+        return String.format("Я %s, друг человека",super.toString());
+    }
+
+    @Override
+    public void speak(String text) {
+        System.out.println(text);
     }
 }

@@ -1,7 +1,7 @@
 public class Turtle extends Animal implements ISpeed, IThink{
 
-    public Turtle(String genus, int weight) {
-        super(genus, weight);
+    public Turtle(int weight) {
+        super("Черепаха", weight);
     }
 
     @Override

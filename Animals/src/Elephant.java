@@ -1,6 +1,6 @@
 public class Elephant extends Animal implements IHorbivore{
-    public Elephant(String genus, int weight) {
-        super(genus, weight);
+    public Elephant(int weight) {
+        super("Слон", weight);
     }
     @Override
     public void horbivore() {

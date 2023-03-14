@@ -1,8 +1,10 @@
 public class Skunk extends Animal{
-    public Skunk(String genus, int weight) {
-        super(genus, weight);
+    public Skunk(int weight) {
+        super("Скунс", weight);
     }
-    public void smell(){
-        System.out.println("Простите, я пукнул, не удержался");
+
+    @Override
+    public String toString() {
+        return String.format("Я %s, ой, простите, я пукнул, не удержался",super.toString());
     }
 }

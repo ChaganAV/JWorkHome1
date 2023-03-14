@@ -24,4 +24,9 @@ public class Watchman extends Person implements IPublish{
     public void post() {
         System.out.println("Я сторож, охраняю местный зоопарк");
     }
+
+    @Override
+    public void speak(String text) {
+        System.out.println(text);
+    }
 }

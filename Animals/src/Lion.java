@@ -1,6 +1,6 @@
 public class Lion extends Cat implements IRaptor{
-    public Lion(String genus, int weight) {
-        super(genus, weight);
+    public Lion(int weight) {
+        super("Лев", weight);
     }
 
     @Override

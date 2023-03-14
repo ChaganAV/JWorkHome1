@@ -1,6 +1,6 @@
-public class Ostrich extends Bird implements IFly,ISpeed{
-    public Ostrich(String genus, int weight) {
-        super(genus, weight);
+public class Ostrich extends Bird implements ISpeed{
+    public Ostrich(int weight) {
+        super("Страус", weight);
     }
 
     @Override

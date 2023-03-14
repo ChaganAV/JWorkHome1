@@ -1,9 +1,5 @@
-public class Cat extends Animal implements Speaking {
-    public Cat(){
-        super("Кошка");
-    }
-
-    public Cat(String genus, int weight) {
+public class Cat extends Animal implements ISpeaking {
+    public Cat(String genus,int weight) {
         super(genus, weight);
     }
 
@@ -14,6 +10,11 @@ public class Cat extends Animal implements Speaking {
 
     @Override
     public String toString() {
-        return String.format("Мур-р %s, я мур-мур %s", super.toString());
+        return String.format("Мур-р, я мур-мур %s", super.toString());
+    }
+
+    @Override
+    public void speak(String text) {
+        System.out.println(text);
     }
 }
